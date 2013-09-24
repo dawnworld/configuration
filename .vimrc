@@ -30,6 +30,8 @@ syntax on
 set guioptions-=T " hide toolbar
 set guioptions-=L " hide left scroll bar
 set guioptions-=r " hide right scroll bar
+
+nmap <C-s> :w<CR>
 "set shiftwidth=4
 "set tabstop=4
 
@@ -66,6 +68,9 @@ nmap cc <Leader>c<space>
 set ts=4 sw=4 et
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+
+" Dash plugin configuratin
+nmap <c-d> :Dash<CR>
 " ######################## own over  ###########################
 
 " My Bundles here:
