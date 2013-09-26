@@ -31,7 +31,6 @@ set guioptions-=L " hide left scroll bar
 set guioptions-=r " hide right scroll bar
 set completeopt=menu
 
-nmap <C-s> :w<CR>
 "set shiftwidth=4
 "set tabstop=4
 
