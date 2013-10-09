@@ -22,6 +22,7 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'clang-complete'
 Bundle 'cocoa.vim'
+Bundle 'Syntastic'
 
 " Global vim configuration
 syntax enable
