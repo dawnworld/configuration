@@ -21,8 +21,9 @@ Bundle 'Indent-Guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'clang-complete'
-Bundle 'cocoa.vim'
+"Bundle 'cocoa.vim'
 Bundle 'Syntastic'
+"Bundle 'https://github.com/b4winckler/vim-objc.git'
 
 " Global vim configuration
 syntax enable
@@ -68,6 +69,8 @@ let g:indent_guides_guide_size=1
 
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
+
+"let filetype_h='objc'
 " ######################## own over  ###########################
 
 " My Bundles here:
