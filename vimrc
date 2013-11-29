@@ -13,10 +13,11 @@ filetype plugin indent on     " required!
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'bzx/vim-theme-pack'
 Bundle 'Tagbar'
-"Bundle 'OmniCppComplete'
+" Bundle 'OmniCppComplete'
 Bundle 'SuperTab'
 Bundle 'Auto-Pairs'
 Bundle 'The-NERD-Commenter'
+"Bundle 'tComment'
 Bundle 'Indent-Guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -24,6 +25,8 @@ Bundle 'clang-complete'
 "Bundle 'cocoa.vim'
 Bundle 'Syntastic'
 "Bundle 'https://github.com/b4winckler/vim-objc.git'
+Bundle 'https://github.com/davidhalter/jedi-vim.git'
+Bundle 'matchit.zip'
 
 " Global vim configuration
 syntax enable
@@ -60,6 +63,8 @@ let g:SuperTabRetainCompletionType=2
 let g:SuperTabLongestEnhanced = 1
 
 " the NERD Comment plugin configuration
+" let NERD_java_alt_style=1
+let NERDSpaceDelims = 1
 nmap cc <Leader>c<space>
 
 " Indent guides plugin configuratin
@@ -67,27 +72,31 @@ set ts=4 sw=4 et
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
+" clang-complete configuration
+" let g:clang_complete_copen=1
+" let g:clang_hl_errors=1
+let g:clang_snippets = 1
+let g:clang_auto_select=1
+let g:clang_complete_auto=1
+let g:clang_periodic_quickfix=0
+let g:clang_snippets=1
+let g:clang_snippets_engine="clang_complete"
+let g:clang_conceal_snippets=1
+" let g:clang_exec="clang"
+let g:clang_user_options=""
+let g:clang_auto_user_options="path, .clang_complete"
+let g:clang_use_library=1
+let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+let g:clang_sort_algo="priority"
+" let g:clang_complete_macros=1
+" let g:clang_complete_patterns=0
+
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
 
 "let filetype_h='objc'
 " ######################## own over  ###########################
 
-" My Bundles here:
-"
-" original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
 
 "
 " Brief help
