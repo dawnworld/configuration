@@ -13,20 +13,17 @@ filetype plugin indent on     " required!
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'bzx/vim-theme-pack'
 Bundle 'Tagbar'
-" Bundle 'OmniCppComplete'
 Bundle 'SuperTab'
 Bundle 'Auto-Pairs'
+Bundle 'clang-complete'
 Bundle 'The-NERD-Commenter'
-"Bundle 'tComment'
 Bundle 'Indent-Guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'clang-complete'
-"Bundle 'cocoa.vim'
 Bundle 'Syntastic'
-"Bundle 'https://github.com/b4winckler/vim-objc.git'
 Bundle 'https://github.com/davidhalter/jedi-vim.git'
 Bundle 'matchit.zip'
+Bundle 'git://github.com/aperezdc/vim-template.git'
 
 " Global vim configuration
 syntax enable
@@ -93,6 +90,10 @@ let g:clang_sort_algo="priority"
 
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
+
+" vim-templates configuration
+" let g:templates_plugin_loaded = 1
+" let g:templates_no_autocmd = 1
 
 "let filetype_h='objc'
 " ######################## own over  ###########################
