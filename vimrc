@@ -24,15 +24,20 @@ Bundle 'Syntastic'
 Bundle 'https://github.com/davidhalter/jedi-vim.git'
 Bundle 'matchit.zip'
 Bundle 'git://github.com/aperezdc/vim-template.git'
+Bundle 'cscope.vim'
+Bundle 'git://github.com/chazy/cscope_maps'
+Bundle 'Mark'
 
 " Global vim configuration
 syntax enable
+set viminfo+=!  " Save and restore global variables.
 colorscheme tango2
 "colorscheme tir_black 
 set guioptions-=T " hide toolbar
 set guioptions-=L " hide left scroll bar
 set guioptions-=r " hide right scroll bar
 set completeopt=menu
+set hlsearch
 
 "set shiftwidth=4
 "set tabstop=4
@@ -91,11 +96,17 @@ let g:clang_sort_algo="priority"
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
 
-" vim-templates configuration
-" let g:templates_plugin_loaded = 1
-" let g:templates_no_autocmd = 1
+" cscope
+nmap <F3> :cw<CR>
+nmap <F4> :ccl<CR>
+nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
+  \:!cscope -Rbq -i cscope.files -f cscope.out<CR>
+  \:cs kill -1<CR>:cs add cscope.out<CR>
 
-"let filetype_h='objc'
+
+" Mark
+let g:mwDefaultHighlightingPalette = 'extended'
+
 " ######################## own over  ###########################
 
 
