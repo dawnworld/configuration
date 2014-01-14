@@ -96,6 +96,9 @@ let g:clang_sort_algo="priority"
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
 
+" Mark
+nmap <F2> <Leader>m
+
 " cscope
 nmap <F3> :cw<CR>
 nmap <F4> :ccl<CR>
