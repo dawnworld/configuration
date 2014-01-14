@@ -32,6 +32,7 @@ Bundle 'Mark'
 syntax enable
 set viminfo+=!  " Save and restore global variables.
 colorscheme tango2
+set cursorline
 "colorscheme tir_black 
 set guioptions-=T " hide toolbar
 set guioptions-=L " hide left scroll bar
