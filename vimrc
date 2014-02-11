@@ -17,6 +17,7 @@ Bundle 'SuperTab'
 Bundle 'Auto-Pairs'
 Bundle 'clang-complete'
 Bundle 'The-NERD-Commenter'
+Bundle 'The-NERD-tree'
 Bundle 'Indent-Guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -32,13 +33,13 @@ Bundle 'Mark'
 syntax enable
 set viminfo+=!  " Save and restore global variables.
 colorscheme tango2
-set cursorline
+" set cursorline
 "colorscheme tir_black 
 set guioptions-=T " hide toolbar
 set guioptions-=L " hide left scroll bar
 set guioptions-=r " hide right scroll bar
 set completeopt=menu
-set hlsearch
+" set hlsearch
 
 "set shiftwidth=4
 "set tabstop=4
@@ -55,8 +56,12 @@ set t_Co=256
 let g:Powerline_symbols = 'unicode'
 set encoding=utf8
 
+" THE-NERD-TREE configuration
+nmap <Leader>nt :NERDTreeToggle<CR>
+
 " Tagbar plugin configuration
 let g:tagbar_left = 1
+let g:tagbar_sort = 0
 nmap <Leader>rt :TagbarToggle<CR>
 
 " SuperTab plugin configuration
