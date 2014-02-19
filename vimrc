@@ -64,6 +64,11 @@ let g:tagbar_left = 1
 let g:tagbar_sort = 0
 nmap <Leader>rt :TagbarToggle<CR>
 
+" Vim Template
+let g:username = "qiyl"
+let g:email = "qiyl@certusnet.com.cn"
+let g:license = "CERTUSNET"
+
 " SuperTab plugin configuration
 let g:SuperTabDefaultCompletionType="<C-X><C-N>"
 "let g:SuperTabDefaultCompletionType="<C-X><C-O>"
