@@ -15,14 +15,15 @@ Bundle 'bzx/vim-theme-pack'
 Bundle 'Tagbar'
 Bundle 'SuperTab'
 Bundle 'Auto-Pairs'
-Bundle 'clang-complete'
+" Bundle 'clang-complete'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 Bundle 'Indent-Guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-Bundle 'Syntastic'
+Bundle 'https://github.com/scrooloose/syntastic.git'
 Bundle 'https://github.com/davidhalter/jedi-vim.git'
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'matchit.zip'
 Bundle 'git://github.com/aperezdc/vim-template.git'
 Bundle 'cscope.vim'
@@ -88,38 +89,40 @@ let g:indent_guides_guide_size=1
 " clang-complete configuration
 " let g:clang_complete_copen=1
 " let g:clang_hl_errors=1
-let g:clang_snippets = 1
-let g:clang_auto_select=1
-let g:clang_complete_auto=1
-let g:clang_periodic_quickfix=0
-let g:clang_snippets=1
-let g:clang_snippets_engine="clang_complete"
-let g:clang_conceal_snippets=1
+" let g:clang_snippets = 1
+" let g:clang_auto_select=1
+" let g:clang_complete_auto=1
+" let g:clang_periodic_quickfix=0
+" let g:clang_snippets=1
+" let g:clang_snippets_engine="clang_complete"
+" let g:clang_conceal_snippets=1
 " let g:clang_exec="clang"
-let g:clang_user_options=""
-let g:clang_auto_user_options="path, .clang_complete"
-let g:clang_use_library=1
-let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
-let g:clang_sort_algo="priority"
+" let g:clang_user_options=""
+" let g:clang_auto_user_options="path, .clang_complete"
+" let g:clang_use_library=1
+" let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+" let g:clang_sort_algo="priority"
 " let g:clang_complete_macros=1
 " let g:clang_complete_patterns=0
 
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
 
-" Mark
-nmap <F2> <Leader>m
-
 " cscope
-nmap <F3> :cw<CR>
-nmap <F4> :ccl<CR>
+nmap <F7> :cw<CR>
+nmap <F8> :ccl<CR>
 nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
   \:!cscope -Rbq -i cscope.files -f cscope.out<CR>
   \:cs kill -1<CR>:cs add cscope.out<CR>
 
 
 " Mark
+nmap <F2> <Leader>m
+nmap <F3> <Leader>#
+nmap <F4> <Leader>*
 let g:mwDefaultHighlightingPalette = 'extended'
+" nmap * <Plug>MarkSearchOrCurNext 
+" nmap # <Plug>MarkSearchOrCurPrev
 
 " ######################## own over  ###########################
 
