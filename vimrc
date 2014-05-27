@@ -29,6 +29,8 @@ Bundle 'git://github.com/aperezdc/vim-template.git'
 Bundle 'cscope.vim'
 Bundle 'git://github.com/chazy/cscope_maps'
 Bundle 'Mark'
+Bundle 'TagHighlight'
+" Bundle 'octol/vim-cpp-enhanced-highlight'
 
 " Global vim configuration
 syntax enable
@@ -104,6 +106,9 @@ let g:indent_guides_guide_size=1
 " let g:clang_sort_algo="priority"
 " let g:clang_complete_macros=1
 " let g:clang_complete_patterns=0
+
+" YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
 
 " Dash plugin configuratin
 nmap <c-d> :Dash<CR>
