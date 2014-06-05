@@ -129,6 +129,8 @@ let g:mwDefaultHighlightingPalette = 'extended'
 " nmap * <Plug>MarkSearchOrCurNext 
 " nmap # <Plug>MarkSearchOrCurPrev
 
+let g:ycm_global_ycm_extra_conf = '/Users/mac/workspace/git/configuration/ycm_extra_conf.py'
+
 " ######################## own over  ###########################
 
 
