@@ -1,36 +1,39 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 	
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-filetype plugin indent on     " required!
+Plugin 'gmarik/Vundle.vim'
 
 " ######################## own start ###########################
-Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-Bundle 'bzx/vim-theme-pack'
-Bundle 'Tagbar'
-Bundle 'SuperTab'
-Bundle 'Auto-Pairs'
-" Bundle 'clang-complete'
-Bundle 'The-NERD-Commenter'
-Bundle 'The-NERD-tree'
-Bundle 'Indent-Guides'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'https://github.com/scrooloose/syntastic.git'
-Bundle 'https://github.com/davidhalter/jedi-vim.git'
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-Bundle 'matchit.zip'
-Bundle 'git://github.com/aperezdc/vim-template.git'
-Bundle 'cscope.vim'
-Bundle 'git://github.com/chazy/cscope_maps'
-Bundle 'Mark'
-Bundle 'TagHighlight'
+" Plugin 'git://github.com/Lokaltog/vim-powerline.git'
+Plugin 'bzx/vim-theme-pack'
+Plugin 'Tagbar'
+Plugin 'SuperTab'
+Plugin 'Auto-Pairs'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'Indent-Guides'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'https://github.com/scrooloose/syntastic.git'
+Plugin 'https://github.com/davidhalter/jedi-vim.git'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'matchit.zip'
+Plugin 'bling/vim-airline'
+Plugin 'git://github.com/aperezdc/vim-template.git'
+Plugin 'cscope.vim'
+Plugin 'git://github.com/chazy/cscope_maps'
+Plugin 'Mark'
+Plugin 'TagHighlight'
 " Bundle 'octol/vim-cpp-enhanced-highlight'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Global vim configuration
 syntax enable
@@ -53,11 +56,20 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k  
 nmap <C-l> <C-w>l 
 
-" vim-powerline configuration
+"airline configuration
 set laststatus=2
 set t_Co=256
-let g:Powerline_symbols = 'unicode'
+" set guifont=DejaVu_Sans_Mono_for_Powerline:h11
+" set guifont=Droid_Sans_Mono_for_Powerline:h11
+" set guifont=Inconsolata_for_Powerline:h11
+" set guifont=Meslo_for_Powerline:h11
+" set guifont=Meslo_for_Powerline
+set guifont=Meslo_LG_S_DZ_Regular_for_Powerline
 set encoding=utf8
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
+let g:airline_theme='luna'
+
 
 " THE-NERD-TREE configuration
 nmap <Leader>nt :NERDTreeToggle<CR>
@@ -129,18 +141,7 @@ let g:mwDefaultHighlightingPalette = 'extended'
 " nmap * <Plug>MarkSearchOrCurNext 
 " nmap # <Plug>MarkSearchOrCurPrev
 
-let g:ycm_global_ycm_extra_conf = '/Users/mac/workspace/git/configuration/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/workspace/env/conf/ycm_extra_conf.py'
 
 " ######################## own over  ###########################
-
-
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
 

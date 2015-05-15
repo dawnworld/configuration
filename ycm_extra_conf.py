@@ -45,15 +45,7 @@ flags = [
 '-isystem',
 '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
 '-isystem',
-'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
-'-I',
-'/usr/local/Cellar/glib/2.38.2/include/glib-2.0/',
-'-I',
-'/usr/local/Cellar/glib/2.38.2/include/glib-2.0/glib',
-'-I',
-'/usr/local/Cellar/glib/2.38.2/lib/glib-2.0/include',
-'-I',
-'/usr/local/Cellar/glib/2.38.2/include/glib-2.0/gobject/'
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include'
 ]
 
 
