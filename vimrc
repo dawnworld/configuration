@@ -64,11 +64,15 @@ set t_Co=256
 " set guifont=Inconsolata_for_Powerline:h11
 " set guifont=Meslo_for_Powerline:h11
 " set guifont=Meslo_for_Powerline
-set guifont=Meslo_LG_S_DZ_Regular_for_Powerline
+" set guifont=Meslo_LG_S_DZ_Regular_for_Powerline
+" set guifont=FuraMono-Regular_Powerline
 set encoding=utf8
 " let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 let g:airline_theme='luna'
+" let g:airline_section_x=[]
+" let g:airline_section_z=[]
+let g:airline_section_warning=[]
 
 
 " THE-NERD-TREE configuration
