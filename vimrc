@@ -21,7 +21,9 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/davidhalter/jedi-vim.git'
+if v:version >= 704
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+endif
 Plugin 'matchit.zip'
 Plugin 'bling/vim-airline'
 Plugin 'git://github.com/aperezdc/vim-template.git'
@@ -29,6 +31,7 @@ Plugin 'cscope.vim'
 Plugin 'git://github.com/chazy/cscope_maps'
 Plugin 'Mark'
 Plugin 'TagHighlight'
+Plugin 'ifdef-highlighting'
 " Bundle 'octol/vim-cpp-enhanced-highlight'
 
 " All of your Plugins must be added before the following line
@@ -70,10 +73,10 @@ set encoding=utf8
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts=1
 let g:airline_theme='luna'
+" let g:Powerline_symbols='fancy' 
 " let g:airline_section_x=[]
 " let g:airline_section_z=[]
 let g:airline_section_warning=[]
-
 
 " THE-NERD-TREE configuration
 nmap <Leader>nt :NERDTreeToggle<CR>
@@ -145,7 +148,9 @@ let g:mwDefaultHighlightingPalette = 'extended'
 " nmap * <Plug>MarkSearchOrCurNext 
 " nmap # <Plug>MarkSearchOrCurPrev
 
+if v:version >= 704
 let g:ycm_global_ycm_extra_conf = '~/workspace/env/conf/ycm_extra_conf.py'
+endif
 
 " ######################## own over  ###########################
 

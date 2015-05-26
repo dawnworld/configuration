@@ -1,8 +1,5 @@
 alias ls='ls -G'
 alias ll='ls -Gal'
-#alias scp='/opt/local/bin/scp'
-#alias mysql=/usr/local/mysql/bin/mysql
-#alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 #alias ssh=/usr/local/bin/ownssh
 
 #export PATH=~/workspace/path:~/.rbenv/versions/1.9.3-p448/bin:$PATH
