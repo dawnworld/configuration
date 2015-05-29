@@ -1,5 +1,7 @@
 alias ls='ls -G'
 alias ll='ls -Gal'
+alias tailf='tail -f'
+alias wq='wireshark-qt &'
 #alias ssh=/usr/local/bin/ownssh
 
 #export PATH=~/workspace/path:~/.rbenv/versions/1.9.3-p448/bin:$PATH
@@ -10,7 +12,8 @@ alias ll='ls -Gal'
 #complete -W "$(echo `cat ~/.local/share/rake/octo_cmd |cut -f 1`;)" rake 
 
 # add title like this Dawnworld:~/workspace
-export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
+# export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
+export PS1="\[\e[32m\][\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[31m\]\w\[\e[32m\]]\[\e[36m\]$\[\e[m\] "
 
 #export ADT_ROOT=/Users/mac/Applications/adt-bundle-mac-x86_64-20131030
 #export NDK_ROOT=/Users/mac/workspace/env/android-ndk-r9d
