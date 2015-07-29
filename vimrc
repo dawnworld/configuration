@@ -32,13 +32,20 @@ Plugin 'git://github.com/chazy/cscope_maps'
 Plugin 'Mark'
 Plugin 'TagHighlight'
 Plugin 'ifdef-highlighting'
-" Bundle 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'lua-support'
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-misc'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Global vim configuration
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
 syntax enable
 set viminfo+=!  " Save and restore global variables.
 colorscheme tango2
@@ -69,7 +76,6 @@ set t_Co=256
 " set guifont=Meslo_for_Powerline
 " set guifont=Meslo_LG_S_DZ_Regular_for_Powerline
 " set guifont=FuraMono-Regular_Powerline
-set encoding=utf8
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts=1
 let g:airline_theme='luna'
@@ -107,25 +113,6 @@ set ts=4 sw=4 et
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-" clang-complete configuration
-" let g:clang_complete_copen=1
-" let g:clang_hl_errors=1
-" let g:clang_snippets = 1
-" let g:clang_auto_select=1
-" let g:clang_complete_auto=1
-" let g:clang_periodic_quickfix=0
-" let g:clang_snippets=1
-" let g:clang_snippets_engine="clang_complete"
-" let g:clang_conceal_snippets=1
-" let g:clang_exec="clang"
-" let g:clang_user_options=""
-" let g:clang_auto_user_options="path, .clang_complete"
-" let g:clang_use_library=1
-" let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
-" let g:clang_sort_algo="priority"
-" let g:clang_complete_macros=1
-" let g:clang_complete_patterns=0
-
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 
@@ -133,12 +120,22 @@ let g:ycm_confirm_extra_conf = 0
 nmap <c-d> :Dash<CR>
 
 " cscope
+nmap <C-s>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
+nmap <C-s>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-s>c :cs find c <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-s>t :cs find t <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-s>e :cs find e <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-s>f :cs find f <C-R>=expand("<cfile>")<CR><CR>  
+nmap <C-s>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-s>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
 nmap <F7> :cw<CR>
 nmap <F8> :ccl<CR>
 nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
   \:!cscope -Rbq -i cscope.files -f cscope.out<CR>
   \:cs kill -1<CR>:cs add cscope.out<CR>
 
+nmap <F10> :b#<CR>
 
 " Mark
 nmap <F2> <Leader>m
@@ -151,6 +148,10 @@ let g:mwDefaultHighlightingPalette = 'extended'
 if v:version >= 704
 let g:ycm_global_ycm_extra_conf = '~/workspace/env/conf/ycm_extra_conf.py'
 endif
+
+" ######################## UltiSnips  ###########################
+let g:UltiSnipsExpandTrigger="<C-TAB>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/workspace/env/conf/snips']
 
 " ######################## own over  ###########################
 

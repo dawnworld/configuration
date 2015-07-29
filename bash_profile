@@ -2,6 +2,12 @@ alias ls='ls -G'
 alias ll='ls -Gal'
 alias tailf='tail -f'
 alias wq='wireshark-qt &'
+alias do='ssh root@45.55.9.39'
+alias 199='ssh qiyl@172.16.45.199'
+alias 139="ssh -t qiyl@172.16.45.139 'cd /home/qiyl/workspace/work/msa && exec bash -l'"
+alias tj="ssh -t 10.166.173.241 'cd /home/qiyl/workspace && exec bash -l'"
+alias 184="ssh -t 172.16.48.184 'cd /home/qiyl/workspace && exec bash -l'"
+alias vmware="ssh -t root@172.16.16.143 'cd /home/qiyl/workspace && exec bash -l'"
 #alias ssh=/usr/local/bin/ownssh
 
 #export PATH=~/workspace/path:~/.rbenv/versions/1.9.3-p448/bin:$PATH
