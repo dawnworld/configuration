@@ -18,7 +18,6 @@ Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'Indent-Guides'
 Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/davidhalter/jedi-vim.git'
 if v:version >= 704
@@ -36,7 +35,9 @@ Plugin 'ifdef-highlighting'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
+Plugin 'DoxygenToolkit.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,9 +117,6 @@ let g:indent_guides_guide_size=1
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 
-" Dash plugin configuratin
-nmap <c-d> :Dash<CR>
-
 " cscope
 nmap <C-s>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
 nmap <C-s>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
@@ -145,13 +143,32 @@ let g:mwDefaultHighlightingPalette = 'extended'
 " nmap * <Plug>MarkSearchOrCurNext 
 " nmap # <Plug>MarkSearchOrCurPrev
 
+" ######################## YouCompleteMe  ###########################
 if v:version >= 704
 let g:ycm_global_ycm_extra_conf = '~/workspace/env/conf/ycm_extra_conf.py'
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 endif
 
 " ######################## UltiSnips  ###########################
-let g:UltiSnipsExpandTrigger="<C-TAB>"
+" let g:UltiSnipsExpandTrigger="<C-TAB>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/workspace/env/conf/snips']
+let g:UltiSnipsExpandTrigger = "<C-e>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" ######################## DoxygenTookit ###########################
+" let g:DoxygenToolkit_authorName = 'qiyl@certusnet.com.cn' 
+" let g:DoxygenToolkit_authorTag = '\author 	   '
+" let g:DoxygenToolkit_dateTag = '\date 	   '
+" let g:DoxygenToolkit_paramTag_pre = '\param	   '
+" let g:DoxygenToolkit_returnTag = '\return      '
+" let g:DoxygenToolkit_blockHeader = '***************************************************************************'
+" let g:DoxygenToolkit_blockFooter = '***************************************************************************'
+
+
+
 
 " ######################## own over  ###########################
 
