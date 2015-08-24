@@ -12,7 +12,8 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'bzx/vim-theme-pack'
 Plugin 'Tagbar'
-Plugin 'SuperTab'
+Plugin 'VisIncr'
+Plugin 'ctrlp.vim'
 Plugin 'Auto-Pairs'
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
@@ -22,6 +23,7 @@ Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/davidhalter/jedi-vim.git'
 if v:version >= 704
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'SirVer/ultisnips'
 endif
 Plugin 'matchit.zip'
 Plugin 'bling/vim-airline'
@@ -36,8 +38,11 @@ Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
 Plugin 'DoxygenToolkit.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'airblade/vim-gitgutter'
+" Plugin 'bbchung/clighter'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,6 +92,7 @@ let g:airline_section_warning=[]
 
 " THE-NERD-TREE configuration
 nmap <Leader>nt :NERDTreeToggle<CR>
+nmap <Leader>tf :NERDTreeFind<CR>
 
 " Tagbar plugin configuration
 let g:tagbar_left = 1
@@ -152,12 +158,18 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 endif
 
 " ######################## UltiSnips  ###########################
+if v:version >= 704
 " let g:UltiSnipsExpandTrigger="<C-TAB>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/workspace/env/conf/snips']
 let g:UltiSnipsExpandTrigger = "<C-e>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+endif
 
+
+" if v:version >= 704
+    " let g:clighter_libclang_file = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+" end
 " ######################## DoxygenTookit ###########################
 " let g:DoxygenToolkit_authorName = 'qiyl@certusnet.com.cn' 
 " let g:DoxygenToolkit_authorTag = '\author 	   '

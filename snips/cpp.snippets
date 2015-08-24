@@ -1,0 +1,19 @@
+snippet extern_c "extern C in CPP"
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+$0
+
+#ifdef __cplusplus
+}
+#endif
+endsnippet
+
+snippet typedef_struct "typedef struct"
+typedef struct $0
+{
+}__attribute__ ((__packed__))
+endsnippet
+
