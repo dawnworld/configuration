@@ -2,13 +2,13 @@ alias ls='ls -G'
 alias ll='ls -Gal'
 alias tailf='tail -f'
 alias wq='wireshark-qt &'
-alias do='ssh root@45.55.9.39'
+#alias do='ssh root@45.55.9.39'
 alias 199='ssh qiyl@172.16.45.199'
 alias 139="ssh -t qiyl@172.16.45.139 'cd /home/qiyl/workspace/work/msa && exec bash -l'"
 alias tj="ssh -t 10.166.173.241 'cd /home/qiyl/workspace && exec bash -l'"
 alias 184="ssh -t 172.16.48.184 'cd /home/qiyl/workspace && exec bash -l'"
 alias vmware="ssh -t root@172.16.16.143 'cd /home/qiyl/workspace && exec bash -l'"
-#alias ssh=/usr/local/bin/ownssh
+alias 150="ssh -t root@172.16.161.150 'cd /home/flexbng-ipi && exec bash -l'"
 
 #export PATH=~/workspace/path:~/.rbenv/versions/1.9.3-p448/bin:$PATH
 #export PATH=/usr/local/bin:$PATH
@@ -19,7 +19,11 @@ alias vmware="ssh -t root@172.16.16.143 'cd /home/qiyl/workspace && exec bash -l
 
 # add title like this Dawnworld:~/workspace
 # export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
-export PS1="\[\e[32m\][\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[31m\]\w\[\e[32m\]]\[\e[36m\]$\[\e[m\] "
+#export PS1="\[\e[32m\][\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[31m\]\w\[\e[32m\]]\[\e[36m\]$\[\e[m\] "
+export PS1='[\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[33m\]\W\[\e[35m\]$(__git_ps1 " (%s)")\[\e[36m\]]\$\[\e[m\] '
+
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 
 #export ADT_ROOT=/Users/mac/Applications/adt-bundle-mac-x86_64-20131030
 #export NDK_ROOT=/Users/mac/workspace/env/android-ndk-r9d
