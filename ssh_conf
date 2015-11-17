@@ -1,0 +1,9 @@
+Host *
+    User root
+
+Host vbras
+    Hostname 172.16.24.228
+
+Host cpm
+    Hostname 192.168.1.100
+    ProxyCommand ssh vbras nc %h %p 2>/dev/null

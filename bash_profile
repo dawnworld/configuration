@@ -8,6 +8,7 @@ alias 139="ssh -t qiyl@172.16.45.139 'cd /home/qiyl/workspace/work/msa && exec b
 alias tj="ssh -t 10.166.173.241 'cd /home/qiyl/workspace && exec bash -l'"
 alias 184="ssh -t 172.16.48.184 'cd /home/qiyl/workspace && exec bash -l'"
 alias vmware="ssh -t root@172.16.16.143 'cd /home/qiyl/workspace && exec bash -l'"
+alias dp="ssh -t root@172.16.16.133 'cd /home/qiyl/workspace && exec bash -l'"
 alias 150="ssh -t root@172.16.161.150 'cd /home/flexbng-ipi && exec bash -l'"
 
 #export PATH=~/workspace/path:~/.rbenv/versions/1.9.3-p448/bin:$PATH
@@ -20,7 +21,7 @@ alias 150="ssh -t root@172.16.161.150 'cd /home/flexbng-ipi && exec bash -l'"
 # add title like this Dawnworld:~/workspace
 # export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}: ${PWD/$HOME/~}\007"'
 #export PS1="\[\e[32m\][\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[31m\]\w\[\e[32m\]]\[\e[36m\]$\[\e[m\] "
-export PS1='[\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[33m\]\W\[\e[35m\]$(__git_ps1 " (%s)")\[\e[36m\]]\$\[\e[m\] '
+export PS1='\[\e[36m\][\[\e[35m\]\u\[\e[36m\]@\[\e[36m\]\h \[\e[33m\]\W\[\e[35m\]$(__git_ps1 " (%s)")\[\e[36m\]]\$\[\e[m\] '
 
 source ~/.git-completion.bash
 source ~/.git-prompt.sh

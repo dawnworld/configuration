@@ -152,16 +152,19 @@ let g:mwDefaultHighlightingPalette = 'extended'
 
 " ######################## YouCompleteMe  ###########################
 if v:version >= 704
-let g:ycm_global_ycm_extra_conf = '~/workspace/env/conf/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/workspace/env/config/ycm_extra_conf.py'
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_server_use_vim_stdout = 0
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 endif
 
 " ######################## UltiSnips  ###########################
 if v:version >= 704
 " let g:UltiSnipsExpandTrigger="<C-TAB>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/workspace/env/conf/snips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/workspace/env/config/snips']
 let g:UltiSnipsExpandTrigger = "<C-e>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
