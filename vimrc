@@ -19,17 +19,17 @@ Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'Indent-Guides'
 Plugin 'rizzatti/funcoo.vim'
-Plugin 'https://github.com/scrooloose/syntastic.git'
-Plugin 'https://github.com/davidhalter/jedi-vim.git'
+Plugin 'scrooloose/syntastic'
+Plugin 'davidhalter/jedi-vim'
 if v:version >= 704
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 endif
 Plugin 'matchit.zip'
 Plugin 'bling/vim-airline'
-Plugin 'git://github.com/aperezdc/vim-template.git'
+Plugin 'aperezdc/vim-template'
 Plugin 'cscope.vim'
-Plugin 'git://github.com/chazy/cscope_maps'
+Plugin 'chazy/cscope_maps'
 Plugin 'Mark'
 Plugin 'TagHighlight'
 Plugin 'ifdef-highlighting'
@@ -41,8 +41,11 @@ Plugin 'ervandew/supertab'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mfukar/robotframework-vim'
 " Plugin 'oplatek/Conque-Shell'
 Plugin 'Conque-GDB'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'tpope/vim-dispatch'
 " Plugin 'bbchung/clighter'
 
 " All of your Plugins must be added before the following line
@@ -111,6 +114,9 @@ let g:SuperTabDefaultCompletionType="<C-X><C-N>"
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabLongestEnhanced = 1
 
+" GitGutter 
+let g:gitgutter_max_signs = 5000
+
 " the NERD Comment plugin configuration
 " let NERD_java_alt_style=1
 let NERDSpaceDelims = 1
@@ -170,6 +176,40 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
 
+" ######################## OmniShark  ###########################
+let g:OmniSharp_selector_ui = 'ctrlp'
+augroup omnisharp_commands
+    autocmd!
+
+    "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
+    autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+    " Automatically add new cs files to the nearest project on save
+    autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+
+    "show type information automatically when the cursor stops moving
+    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+
+    "The following commands are contextual, based on the current cursor position.
+
+    autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
+    autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
+    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
+    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
+    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
+    "finds members in the current buffer
+    autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr>
+    " cursor can be anywhere on the line containing an issue
+    autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
+    autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
+    autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
+    autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
+    "navigate up by method/property/field
+    autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
+    "navigate down by method/property/field
+    autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
+
+augroup END
 
 " if v:version >= 704
     " let g:clighter_libclang_file = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
