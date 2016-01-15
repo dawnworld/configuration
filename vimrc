@@ -1,46 +1,102 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-	
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-filetype plugin indent on     " required!
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" ######################## own start ###########################
-Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-Bundle 'bzx/vim-theme-pack'
-Bundle 'Tagbar'
-Bundle 'SuperTab'
-Bundle 'Auto-Pairs'
-Bundle 'clang-complete'
-Bundle 'The-NERD-Commenter'
-Bundle 'Indent-Guides'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'Syntastic'
-Bundle 'https://github.com/davidhalter/jedi-vim.git'
-Bundle 'matchit.zip'
-Bundle 'git://github.com/aperezdc/vim-template.git'
-Bundle 'cscope.vim'
-Bundle 'git://github.com/chazy/cscope_maps'
-Bundle 'Mark'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
+" ======================== OWN VIM PLUGIN START ========================
+Plugin 'bzx/vim-theme-pack'
+Plugin 'Tagbar'
+Plugin 'ctrlp.vim'
+Plugin 'Auto-Pairs'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'cscope.vim'
+Plugin 'chazy/cscope_maps'
+Plugin 'matchit.zip'
+Plugin 'Mark'
+Plugin 'bling/vim-airline'
+Plugin 'marcopaganini/termschool-vim-theme'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'queyenth/oxeded.vim'
+Plugin 'jlund3/colorschemer'
+if v:version >= 704
+		Plugin 'Valloric/YouCompleteMe'
+		Plugin 'SirVer/ultisnips'
+endif
+
+" ======================== OWN VIM PLUGIN END ========================
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" ======================== PLUGIN CONF START ========================
 " Global vim configuration
+" Fix Chinese show issue
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+set t_Co=256
+
 syntax enable
+highlight Search guibg='Purple' guifg='NONE'
 set viminfo+=!  " Save and restore global variables.
-colorscheme tango2
-"colorscheme tir_black 
+"set background=dark
+colorscheme lucid
+"colorscheme termschool
+"colorscheme oxeded
+
 set guioptions-=T " hide toolbar
 set guioptions-=L " hide left scroll bar
 set guioptions-=r " hide right scroll bar
 set completeopt=menu
-set hlsearch
 
-"set shiftwidth=4
-"set tabstop=4
+" Indent guides plugin configuratin
+set ts=4 sw=4 et
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+"airline configuration
+set laststatus=2
+let g:airline_theme='luna'
+"let g:airline#extensions#hunks#enabled = 0
+"let g:airline_enable_branch = 1
+let g:airline_section_warning=[]
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#hunks#non_zero_only = 0
+"let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+
+" comment
+nmap cc <Leader>c<space>
+
+" THE-NERD-TREE configuration
+nmap <C-n>t :NERDTreeToggle<CR>
+nmap <C-n>f :NERDTreeFind<CR>
+
+" Tagbar plugin configuration
+let g:tagbar_left = 1
+let g:tagbar_sort = 0
+nmap <Leader>rt :TagbarToggle<CR>
 
 " Window pointer move configuration
 nmap <C-h> <C-w>h  
@@ -48,78 +104,34 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k  
 nmap <C-l> <C-w>l 
 
-" vim-powerline configuration
-set laststatus=2
-set t_Co=256
-let g:Powerline_symbols = 'unicode'
-set encoding=utf8
-
-" Tagbar plugin configuration
-let g:tagbar_left = 1
-nmap <Leader>rt :TagbarToggle<CR>
-
-" SuperTab plugin configuration
-let g:SuperTabDefaultCompletionType="<C-X><C-N>"
-"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabLongestEnhanced = 1
-
-" the NERD Comment plugin configuration
-" let NERD_java_alt_style=1
-let NERDSpaceDelims = 1
-nmap cc <Leader>c<space>
-
-" Indent guides plugin configuratin
-set ts=4 sw=4 et
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-
-" clang-complete configuration
-" let g:clang_complete_copen=1
-" let g:clang_hl_errors=1
-let g:clang_snippets = 1
-let g:clang_auto_select=1
-let g:clang_complete_auto=1
-let g:clang_periodic_quickfix=0
-let g:clang_snippets=1
-let g:clang_snippets_engine="clang_complete"
-let g:clang_conceal_snippets=1
-" let g:clang_exec="clang"
-let g:clang_user_options=""
-let g:clang_auto_user_options="path, .clang_complete"
-let g:clang_use_library=1
-let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
-let g:clang_sort_algo="priority"
-" let g:clang_complete_macros=1
-" let g:clang_complete_patterns=0
-
-" Dash plugin configuratin
-nmap <c-d> :Dash<CR>
-
-" Mark
-nmap <F2> <Leader>m
+" YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
 
 " cscope
-nmap <F3> :cw<CR>
-nmap <F4> :ccl<CR>
-nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
+nmap <C-v>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
+nmap <C-v>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-v>c :cs find c <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-v>t :cs find t <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-v>e :cs find e <C-R>=expand("<cword>")<CR><CR>  
+nmap <C-v>f :cs find f <C-R>=expand("<cfile>")<CR><CR>  
+nmap <C-v>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-v>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+nmap <F7> :cw<CR>
+nmap <F8> :ccl<CR>
+nmap <F9> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
   \:!cscope -Rbq -i cscope.files -f cscope.out<CR>
   \:cs kill -1<CR>:cs add cscope.out<CR>
+set nocscopeverbose " Fix Line42 dumplicate error
 
+nmap <F10> :b#<CR>
 
 " Mark
+nmap <C-m>m <Leader>m
+nmap <C-m>f <Leader>#
+nmap <C-m>b <Leader>*
 let g:mwDefaultHighlightingPalette = 'extended'
 
-" ######################## own over  ###########################
-
-
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
+" CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o
+" ======================== PLUGIN CONF END ========================
