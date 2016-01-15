@@ -1,9 +1,18 @@
 Host *
     User root
 
+Host vmware
+    Hostname 172.16.24.219
+
 Host vbras
-    Hostname 172.16.24.228
+    Hostname 172.16.163.133
 
 Host cpm
     Hostname 192.168.1.100
     ProxyCommand ssh vbras nc %h %p 2>/dev/null
+
+Host compile
+    Hostname 172.16.163.130
+
+Host physical
+    Hostname 172.16.163.129

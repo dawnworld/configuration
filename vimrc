@@ -46,6 +46,7 @@ Plugin 'mfukar/robotframework-vim'
 Plugin 'Conque-GDB'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'fatih/vim-go'
 " Plugin 'bbchung/clighter'
 
 " All of your Plugins must be added before the following line
