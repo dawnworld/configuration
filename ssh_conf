@@ -2,7 +2,7 @@ Host *
     User root
 
 Host vmware
-    Hostname 172.16.24.219
+    Hostname 172.16.25.204
 
 Host vbras
     Hostname 172.16.163.133
@@ -16,3 +16,14 @@ Host compile
 
 Host physical
     Hostname 172.16.163.129
+
+Host pi
+    Hostname 192.168.5.103
+    User pi
+
+Host vultr
+    Hostname 45.32.52.237
+
+Host aibitos
+    User kiran
+    Hostname 192.168.211.5

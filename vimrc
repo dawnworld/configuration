@@ -10,8 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " ######################## own start ###########################
 " Plugin 'git://github.com/Lokaltog/vim-powerline.git'
-Plugin 'bzx/vim-theme-pack'
 Plugin 'Tagbar'
+Plugin 'Rename'
 Plugin 'VisIncr'
 Plugin 'ctrlp.vim'
 Plugin 'Auto-Pairs'
@@ -47,26 +47,46 @@ Plugin 'Conque-GDB'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'fatih/vim-go'
-" Plugin 'bbchung/clighter'
+Plugin 'nathanalderson/yang.vim'
+
+"------------ themes start ----------
+Plugin 'mhartington/oceanic-next'
+Plugin 'bzx/vim-theme-pack'
+"------------ themes over  ----------
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Global vim configuration
+"------------ encode settings start ----------
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
+"------------ encode settings over  ----------
+
+set cm=blowfish "set encrypt method to blowfish
+
+"------------ GUI settings start ----------
 syntax enable
+set incsearch
 set viminfo+=!  " Save and restore global variables.
+set t_Co=256
 colorscheme tango2
+" colorscheme OceanicNext
+set background=dark
 " set cursorline
 "colorscheme tir_black 
 set guioptions-=T " hide toolbar
 set guioptions-=L " hide left scroll bar
 set guioptions-=r " hide right scroll bar
 set completeopt=menu
-" set hlsearch
+
+"+++++++ airline configuration ++++
+set laststatus=2
+let g:airline_theme='luna'
+" let g:airline_theme='oceanicnext'
+let g:airline_section_warning=[]
+"------------ GUI settings over  ----------
 
 "set shiftwidth=4
 "set tabstop=4
@@ -77,27 +97,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k  
 nmap <C-l> <C-w>l 
 
-"airline configuration
-set laststatus=2
-set t_Co=256
-" set guifont=DejaVu_Sans_Mono_for_Powerline:h11
-" set guifont=Droid_Sans_Mono_for_Powerline:h11
-" set guifont=Inconsolata_for_Powerline:h11
-" set guifont=Meslo_for_Powerline:h11
-" set guifont=Meslo_for_Powerline
-" set guifont=Meslo_LG_S_DZ_Regular_for_Powerline
-" set guifont=FuraMono-Regular_Powerline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts=1
-let g:airline_theme='luna'
-" let g:Powerline_symbols='fancy' 
-" let g:airline_section_x=[]
-" let g:airline_section_z=[]
-let g:airline_section_warning=[]
-
 " THE-NERD-TREE configuration
-nmap <Leader>nt :NERDTreeToggle<CR>
-nmap <Leader>tf :NERDTreeFind<CR>
+nmap <C-n>t :NERDTreeToggle<CR>
+nmap <C-n>f :NERDTreeFind<CR>
+let g:NERDTreeWinPos = "right"
 
 " Tagbar plugin configuration
 let g:tagbar_left = 1
@@ -141,7 +144,7 @@ nmap <C-s>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-s>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-s>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
-nmap <F7> :cw<CR>
+nmap <F7> :botright cwindow<CR>
 nmap <F8> :ccl<CR>
 nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
   \:!cscope -Rbq -i cscope.files -f cscope.out<CR>
@@ -215,16 +218,6 @@ augroup END
 " if v:version >= 704
     " let g:clighter_libclang_file = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 " end
-" ######################## DoxygenTookit ###########################
-" let g:DoxygenToolkit_authorName = 'qiyl@certusnet.com.cn' 
-" let g:DoxygenToolkit_authorTag = '\author 	   '
-" let g:DoxygenToolkit_dateTag = '\date 	   '
-" let g:DoxygenToolkit_paramTag_pre = '\param	   '
-" let g:DoxygenToolkit_returnTag = '\return      '
-" let g:DoxygenToolkit_blockHeader = '***************************************************************************'
-" let g:DoxygenToolkit_blockFooter = '***************************************************************************'
-
-
 
 
 " ######################## own over  ###########################

@@ -26,3 +26,5 @@ PATH=/usr/local/sbin:~/workspace/env/local/bin:$PATH
 #PATH=~/workspace/env/android-sdk-macosx/platform-tools:$PATH
 export PATH
 export GOPATH=$HOME/workspace/go
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
